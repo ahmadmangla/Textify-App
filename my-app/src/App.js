@@ -1,14 +1,28 @@
-import React , {useState} from 'react'
-import Navbar from './Components/Navbar'
-import TextForm from './Components/TextForm'
+import React , {useState} from 'react';
+import Alert from './Components/Alert';
+import Navbar from './Components/Navbar';
+import TextForm from './Components/TextForm';
 
 const App = () => {
-  const [mode, setMode] = useState("light")
-  const [buttonColor, setbuttonColor] = useState("primary")
+  const [mode, setMode] = useState("light");
+  const [buttonColor, setbuttonColor] = useState("primary");
+  const [alertMsg, setAlertMsg] = useState(null);
+  const toggleAlert = (msg, type) => {
+    setAlertMsg({
+      message: msg,
+      type: type
+    });
+
+    setTimeout(() => {
+      setAlertMsg(null)
+    }, 3000);
+    
+  }
   const toggleMode = () => {
-    if(mode=="light"){
+    if(mode==="light"){
       setMode("dark");
-      setbuttonColor("dark-mode-color")
+      toggleAlert("Dark Mode has been enabled", "Success")
+      setbuttonColor("dark-mode-color");
       document.body.style.backgroundColor = "#32383e";
       document.body.style.color = "#ffffff";
     }
@@ -19,10 +33,13 @@ const App = () => {
       document.body.style.color = "";
     }
   }
+
+  
   return <>
     <Navbar title="Textify" mode={mode} toggleMode={toggleMode}/>
     <div className='container'>
-      <TextForm buttonColor={buttonColor} heading="Enter The Text Below" />
+      <Alert alert={alertMsg}/>
+      <TextForm buttonColor={buttonColor} heading="Enter The Text Below" toggleAlert={toggleAlert}/>
     </div>
   </>
 }
