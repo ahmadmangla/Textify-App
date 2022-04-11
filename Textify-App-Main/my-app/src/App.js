@@ -18,21 +18,31 @@ const App = () => {
     }, 3000);
     
   }
-  const toggleMode = () => {
-    switch (mode) {
-      case "dark":
-        setMode("dark");
-        toggleAlert("Dark Mode has been enabled", "Success")
-        setbuttonColor("dark-mode-color");
-        document.body.style.backgroundColor = "#32383e";
+  const toggleMode = (color, lightcolor) => {
+        const capitalize = (text) =>{
+          const str = text;
+          const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+          return str2;
+        }
+        setMode(color);
+        toggleAlert(`${capitalize(color)} theme has been enabled`, "Success")
+        setbuttonColor(`${color}-mode-color`);
+        document.body.style.backgroundColor = lightcolor;
         document.body.style.color = "#ffffff";
-        break;
-      case "purple":
-        setMode("purple");
-        toggleAlert("Purple theme has been enabled", "Success")
-        setbuttonColor("purple-theme-color");
-        document.body.style.backgroundColor = "#666";
-        document.body.style.color = "#ffffff";
+        // if(mode==="light"){
+        //   setMode("dark");
+        //   toggleAlert("Dark Mode has been enabled", "Success")
+        //   setbuttonColor("dark-mode-color");
+        //   document.body.style.backgroundColor = "#32383e";
+        //   document.body.style.color = "#ffffff";
+        // }
+        // else{
+        //   setMode("light");
+        //   setbuttonColor("primary")
+        //   document.body.style.backgroundColor = "white";
+        //   document.body.style.color = "";
+        // }
+  }
       // case 2:
       //    day = "Tuesday";
       //   break;
@@ -47,22 +57,7 @@ const App = () => {
       //   break;
       // case 6:
       //   day = "Saturday";
-    }
-
-    // if(mode==="light"){
-    //   setMode("dark");
-    //   toggleAlert("Dark Mode has been enabled", "Success")
-    //   setbuttonColor("dark-mode-color");
-    //   document.body.style.backgroundColor = "#32383e";
-    //   document.body.style.color = "#ffffff";
-    // }
-    // else{
-    //   setMode("light");
-    //   setbuttonColor("primary")
-    //   document.body.style.backgroundColor = "white";
-    //   document.body.style.color = "";
-    // }
-  }
+  
 
   
   return <>

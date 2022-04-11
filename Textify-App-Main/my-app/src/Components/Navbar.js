@@ -22,14 +22,15 @@ const Navbar = (props) => {
                 </div>
 
                 <div className='choose-theme-styles'>
-                    <span  className='purple-theme' onClick={props.toggleMode}></span>
-                    <span className='dark-theme'></span>
-                    <span className='blue-theme'></span>
-                    <span className='white-theme'></span>
+                    {/* <span  className='white-theme' onClick={() => props.toggleMode("light", "#b530b5")}></span> */}
+                    <span  className='purple-theme' onClick={() => props.toggleMode("purple", "#b530b5")}></span>
+                    <span className='dark-theme' onClick={() => props.toggleMode("orange", "#f5a059")}></span>
+                    <span className='blue-theme' onClick={() => props.toggleMode("blue", "#5b9cc1")}></span>
+                    <span className='black-theme' onClick={() => props.toggleMode("dark", "#363d44")}></span>
                 </div>
 
                 <div className={`form-check form-switch text-${props.mode=="light" ? "dark" : "white"}`} >
-                    <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
+                    <input className="form-check-input" onClick={()=> props.toggleMode("dark", "#1e1e1e")} type="checkbox" id="flexSwitchCheckDefault" />
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
                 </div>
             </div>

@@ -37,6 +37,40 @@
     background: #00a1ff;
 }
 
-navbar-purple{
+.choose-theme-styles .white-theme{
+    background-color: #fff;
+}
+
+.navbar-purple{
     background: purple;
 }
+
+.btn-purple-mode-color{
+    background-color: rgb(92, 5, 92);
+    color: white !important;
+}
+
+.navbar-purple a, .navbar-orange a, .navbar-blue a{
+    color: white !important;
+}
+
+.navbar-orange{
+    background: #c35c04;
+    color: white !important;
+}
+
+.navbar-blue{
+    background: #0070b1;
+}
+
+.btn-orange-mode-color{
+    background: #c35c04 !important;
+    color: white !important;
+}
+
+.btn-blue-mode-color{
+    background: #0070b1;
+color: white !important;
+}
+
+
