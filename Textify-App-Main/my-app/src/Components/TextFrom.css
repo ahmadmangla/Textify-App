@@ -1,0 +1,27 @@
+.Button-container{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.Button-container button{
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 570px){
+    .Button-container{
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .Button-container button{
+        margin-top: 1rem;
+        margin-right: 0;
+    }
+}
+
+button.btn-dark-mode-color{
+    background: #212529;
+    color: white !important;
+}
