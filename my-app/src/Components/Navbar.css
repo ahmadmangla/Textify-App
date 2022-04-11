@@ -1,0 +1,42 @@
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar-nav li.nav-item a {
+    font-weight: 500;
+}
+
+.form-check-input:checked {
+    border-color: #17cc60;
+    background-color: #17cc60;
+}
+
+.choose-theme-styles{
+    margin-right: 1rem;
+}
+
+.choose-theme-styles span {
+    width: 15px;
+    height: 15px;
+    margin: 0px 4px;
+    display: inline-block;
+    background: red;
+    border-radius: 25px;
+}
+
+.choose-theme-styles span.purple-theme{
+    background: #b600ad;
+}
+
+.choose-theme-styles span.black-theme{
+    background: #3d3d3d;
+}
+
+.choose-theme-styles span.blue-theme{
+    background: #00a1ff;
+}
+
+navbar-purple{
+    background: purple;
+}

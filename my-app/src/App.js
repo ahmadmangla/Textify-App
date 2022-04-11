@@ -19,24 +19,54 @@ const App = () => {
     
   }
   const toggleMode = () => {
-    if(mode==="light"){
-      setMode("dark");
-      toggleAlert("Dark Mode has been enabled", "Success")
-      setbuttonColor("dark-mode-color");
-      document.body.style.backgroundColor = "#32383e";
-      document.body.style.color = "#ffffff";
+    switch (mode) {
+      case "dark":
+        setMode("dark");
+        toggleAlert("Dark Mode has been enabled", "Success")
+        setbuttonColor("dark-mode-color");
+        document.body.style.backgroundColor = "#32383e";
+        document.body.style.color = "#ffffff";
+        break;
+      case "purple":
+        setMode("purple");
+        toggleAlert("Purple theme has been enabled", "Success")
+        setbuttonColor("purple-theme-color");
+        document.body.style.backgroundColor = "#666";
+        document.body.style.color = "#ffffff";
+      // case 2:
+      //    day = "Tuesday";
+      //   break;
+      // case 3:
+      //   day = "Wednesday";
+      //   break;
+      // case 4:
+      //   day = "Thursday";
+      //   break;
+      // case 5:
+      //   day = "Friday";
+      //   break;
+      // case 6:
+      //   day = "Saturday";
     }
-    else{
-      setMode("light");
-      setbuttonColor("primary")
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "";
-    }
+
+    // if(mode==="light"){
+    //   setMode("dark");
+    //   toggleAlert("Dark Mode has been enabled", "Success")
+    //   setbuttonColor("dark-mode-color");
+    //   document.body.style.backgroundColor = "#32383e";
+    //   document.body.style.color = "#ffffff";
+    // }
+    // else{
+    //   setMode("light");
+    //   setbuttonColor("primary")
+    //   document.body.style.backgroundColor = "white";
+    //   document.body.style.color = "";
+    // }
   }
 
   
   return <>
-    <Navbar title="Textify" mode={mode} toggleMode={toggleMode}/>
+    <Navbar title="Textifyy" mode={mode} toggleMode={toggleMode}/>
     <div className='container'>
       <Alert alert={alertMsg}/>
       <TextForm buttonColor={buttonColor} heading="Enter The Text Below" toggleAlert={toggleAlert}/>

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Navbar.css';
 
 const Navbar = (props) => {
     return (
@@ -18,6 +19,13 @@ const Navbar = (props) => {
                             <a className="nav-link" href="/">{props.about}</a>
                         </li>
                     </ul>
+                </div>
+
+                <div className='choose-theme-styles'>
+                    <span  className='purple-theme' onClick={props.toggleMode}></span>
+                    <span className='dark-theme'></span>
+                    <span className='blue-theme'></span>
+                    <span className='white-theme'></span>
                 </div>
 
                 <div className={`form-check form-switch text-${props.mode=="light" ? "dark" : "white"}`} >
