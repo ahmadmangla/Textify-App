@@ -36,7 +36,7 @@ const TextForm = (props) => {
   }
 
   return (
-    <div className="mb-3 my-3">
+    <div className="mb-3 my-5">
       <h2>{props.heading}</h2>
       <textarea className="form-control" id="my-form" onChange={handleOnChange} placeholder={text} value={text} rows="8"></textarea>
       <div className='float-end'>Total Characters: {text.replace(/ /g, "").length}</div>

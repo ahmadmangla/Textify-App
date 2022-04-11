@@ -36,7 +36,7 @@ const App = () => {
 
   
   return <>
-    <Navbar title="Textify" mode={mode} toggleMode={toggleMode}/>
+    <Navbar title="Textifyy" mode={mode} toggleMode={toggleMode}/>
     <div className='container'>
       <Alert alert={alertMsg}/>
       <TextForm buttonColor={buttonColor} heading="Enter The Text Below" toggleAlert={toggleAlert}/>
