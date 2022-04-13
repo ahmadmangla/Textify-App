@@ -44,13 +44,13 @@ const App = () => {
         // }
   }
   
-  return <>
-    <Navbar title="Textifyy" mode={mode} toggleMode={toggleMode}/>
+  return <React.Fragment>
+    <Navbar title="Textifyy" page="About" mode={mode} toggleMode={toggleMode}/>
     <div className='container'>
       <Alert alert={alertMsg}/>
       <TextForm buttonColor={buttonColor} heading="Enter The Text Below" toggleAlert={toggleAlert}/>
     </div>
-  </>
+  </React.Fragment>
 }
 
 export default App

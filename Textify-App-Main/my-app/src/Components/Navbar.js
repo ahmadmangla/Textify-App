@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types'
 import './Navbar.css';
 
 const Navbar = (props) => {
@@ -23,7 +22,7 @@ const Navbar = (props) => {
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">{props.about}</a>
+                            <a className="nav-link" href="/">{props.page}</a>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +40,7 @@ const Navbar = (props) => {
 }
 
 const Themecolor = (props) => {
-    return <>
+    return <React.Fragment>
         <div className='choose-theme-styles'>
             {/* <span  className='white-theme' onClick={() => props.toggleMode("light", "#b530b5")}></span> */}
             <span className='purple-theme' onClick={() => props.toggleMode("purple", "#b530b5")}></span>
@@ -50,12 +49,12 @@ const Themecolor = (props) => {
             <span className='black-theme' onClick={() => props.toggleMode("dark", "#363d44")}></span>
         </div>
 
-    </>
+    </React.Fragment>
 }
 
-Navbar.defaultProps = {
-    about: "About Us"
-}
+// Navbar.defaultProps = {
+//     about: "About Us"
+// }
 
 
 export default Navbar
