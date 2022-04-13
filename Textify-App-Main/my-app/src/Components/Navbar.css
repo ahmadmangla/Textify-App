@@ -5,6 +5,7 @@
 
 .navbar-nav li.nav-item a {
     font-weight: 500;
+    cursor: pointer;
 }
 
 .form-check-input:checked {

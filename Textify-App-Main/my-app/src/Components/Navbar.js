@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import About from './About';
 import './Navbar.css';
 
 const Navbar = (props) => {
@@ -19,10 +21,10 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">{props.page}</a>
+                            <Link className="nav-link" to="/about">{props.page}</Link>
                         </li>
                     </ul>
                 </div>
