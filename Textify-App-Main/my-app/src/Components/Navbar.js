@@ -1,15 +1,12 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
-import About from './About';
 import './Navbar.css';
 
 const Navbar = (props) => {
     const [theme, settheme] = useState(false);
-    const [text, settext] = useState("Show");
 
     const toggleTheme = () => {
         settheme(!theme);
-        // settext("Hide");
     }
     return (
         <nav className={`navbar navbar-expand-md navbar-${props.mode} bg-${props.mode}`}>

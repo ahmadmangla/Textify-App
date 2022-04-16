@@ -6,8 +6,7 @@ import About from './Components/About'
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  BrowserRouter
+  Routes
 } from "react-router-dom";
 
 const App = () => {
@@ -55,6 +54,7 @@ const App = () => {
     <Router>
       <Navbar title="Textifyy" page="About" mode={mode} toggleMode={toggleMode} />
       <div className='container'>
+      <Alert alert={alertMsg} />
         <Routes>
           <Route path="/about" element={<About />}>
           </Route>
@@ -63,7 +63,6 @@ const App = () => {
         </Routes>
       </div>
     </Router>
-    <Alert alert={alertMsg} />
   </React.Fragment>
 }
 
