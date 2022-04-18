@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './TextFrom.css';
 const TextForm = (props) => {
-  const [text, setText] = useState("Enter text here")
+  const [text, setText] = useState("")
   const handleOnChange = (e) => {
     setText(e.target.value)
   }
@@ -39,13 +39,13 @@ const TextForm = (props) => {
     <div className="mb-3 my-5">
       <h2>{props.heading}</h2>
       <textarea className="form-control" id="my-form" onChange={handleOnChange} placeholder={text} value={text} rows="8"></textarea>
-      <div className='float-end'>Total Characters: {text.replace(/ /g, "").length}</div>
+      <div className='float-end'>Characters: {text.replace(/ /g, "").length} Words: {text.split(" ").filter((element)=>element.length!=0).length} </div>
       <div className='Button-container my-3'>
-        <button className={`btn btn-${props.buttonColor}`} onClick={handleUpClick}> Convert to UpperCase </button>
-        <button className={`btn btn-${props.buttonColor}`} onClick={handleLowClick}> Convert to LowerCase </button>
-        <button className={`btn btn-${props.buttonColor}`} onClick={() => titleCase(text)}> Convert to TitleCase </button>
-        <button className='btn btn-danger' onClick={handleClearText}> Clear Text </button>
-        <button className={`btn btn-${props.buttonColor}`} onClick={handleClipboard}> Copy Text to Clipboard </button>
+        <button disabled={text.length===0}className={`btn btn-${props.buttonColor}`} onClick={handleUpClick}> Convert to UpperCase </button>
+        <button disabled={text.length===0}className={`btn btn-${props.buttonColor}`} onClick={handleLowClick}> Convert to LowerCase </button>
+        <button disabled={text.length===0}className={`btn btn-${props.buttonColor}`} onClick={() => titleCase(text)}> Convert to TitleCase </button>
+        <button disabled={text.length===0}className='btn btn-danger' onClick={handleClearText}> Clear Text </button>
+        <button disabled={text.length===0}className={`btn btn-${props.buttonColor}`} onClick={handleClipboard}> Copy Text to Clipboard </button>
       </div>
     </div>
   )
